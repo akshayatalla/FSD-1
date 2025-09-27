@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selector Examples</title>
+  <style>
+    /* -------------------------------
+       1. SIMPLE SELECTORS
+    --------------------------------*/
+    
+    /* Universal Selector */
+    * {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Element Selector */
+    h1 {
+      color: darkblue;
+      text-align: center;
+      margin: 20px;
+    }
+
+    /* Class Selector */
+    .highlight {
+      color: white;
+      background-color: orange;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    /* ID Selector */
+    #special {
+      color: green;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    /* Group Selector */
+    h2, h3, p {
+      margin: 10px;
+      color: #333;
+    }
+
+    /* -------------------------------
+       2. COMBINATOR SELECTORS
+    --------------------------------*/
+    /* Descendant Selector */
+    div p {
+      color: #444;
+      font-style: italic;
+    }
+
+    /* Child Selector */
+    div > span {
+      background-color: lightyellow;
+      display: inline-block;
+      padding: 5px;
+    }
+
+    /* Adjacent Sibling Selector */
+    h2 + p {
+      color: red;
+      font-weight: bold;
+    }
+
+    /* General Sibling Selector */
+    h2 ~ ul {
+      background-color: #f0f8ff;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    /* -------------------------------
+       3. PSEUDO-CLASS SELECTORS
+    --------------------------------*/
+    a:hover {
+      color: white;
+      background-color: blue;
+      text-decoration: none;
+      padding: 5px;
+      border-radius: 3px;
+    }
+
+    li:first-child {
+      font-weight: bold;
+      color: darkgreen;
+    }
+
+    li:last-child {
+      color: darkred;
+    }
+
+    input:focus {
+      border: 2px solid blue;
+      outline: none;
+    }
+
+    /* -------------------------------
+       4. PSEUDO-ELEMENT SELECTORS
+    --------------------------------*/
+    p::first-letter {
+      font-size: 1.5em;
+      color: blue;
+    }
+
+    p::after {
+      content: " 🌟";
+      color: orange;
+    }
+
+    /* -------------------------------
+       5. ATTRIBUTE SELECTORS
+    --------------------------------*/
+    /* Exact match */
+    input[type="text"] {
+      border: 1px solid #666;
+      padding: 5px;
+    }
+
+    /* Partial match */
+    a[href*="google"] {
+      color: green;
+    }
+
+    /* Starts with match */
+    a[href^="https"] {
+      font-weight: bold;
+    }
+
+    /* Ends with match */
+    img[src$=".png"] {
+      border: 2px solid orange;
+      border-radius: 8px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>CSS Selector Examples</h1>
+
+  <!-- SIMPLE SELECTORS -->
+  <h2>1. Simple Selectors</h2>
+  <p>This is a paragraph styled using <span class="highlight">class selector</span>.</p>
+  <p id="special">This paragraph uses an ID selector.</p>
+
+  <!-- COMBINATOR SELECTORS -->
+  <h2>2. Combinator Selectors</h2>
+  <div>
+    <p>This paragraph is inside a DIV (Descendant selector).</p>
+    <span>This span is a direct child of DIV.</span>
+    <p>This is another paragraph inside the same DIV.</p>
+  </div>
+  
+  <p>This paragraph comes right after h2 (Adjacent sibling selector).</p>
+
+  <ul>
+    <li>First list item (General sibling selector applied)</li>
+    <li>Second list item</li>
+    <li>Third list item</li>
+    <li>Last list item</li>
+  </ul>
+
+  <!-- PSEUDO-CLASS SELECTORS -->
+  <h2>3. Pseudo-Class Selectors</h2>
+  <a href="https://google.com" target="_blank">Google Link</a> |
+  <a href="https://example.com">Example Link</a>
+
+  <br><br>
+  <label for="name">Focus example:</label>
+  <input type="text" id="name" placeholder="Type here...">
+
+  <!-- PSEUDO-ELEMENT SELECTORS -->
+  <h2>4. Pseudo-Element Selectors</h2>
+  <p>Pseudo-elements can style parts of an element, like the first letter or adding content dynamically.</p>
+
+  <!-- ATTRIBUTE SELECTORS -->
+  <h2>5. Attribute Selectors</h2>
+  <p>
+    <a href="https://google.com">Google</a><br>
+    <a href="http://example.org">Example Org</a><br>
+    <a href="https://openai.com">OpenAI</a>
+  </p>
+
+  <p>
+    <img src="https://cdn.wallpapersafari.com/30/62/jHBzTk.jpg" alt="Sample Image" width="100">
+    <img src="https://plus.unsplash.com/premium_photo-1758279868752-13c4e4967b39?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMXx8fGVufDB8fHx8fA%3D%3D" alt="Sample Image" width="100">
+  </p>
+
+</body>
+</html>
