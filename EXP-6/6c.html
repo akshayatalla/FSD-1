@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Input Methods</title>
+</head>
+<body>
+  <h2>Ways to Take Input</h2>
+
+  <!-- Using prompt -->
+  <button onclick="promptInput()">Prompt Input</button><br><br>
+
+  <!-- Using form fields -->
+  <form onsubmit="formInput(event)">
+    <label>Enter Name: </label>
+    <input type="text" id="nameInput" placeholder="Your Name">
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="output"></p>
+
+  <script>
+    // 1. Taking input using prompt
+    function promptInput() {
+      let name = prompt("Enter your name:");
+      alert("You entered: " + name);
+    }
+
+    // 2. Taking input using form fields
+    function formInput(event) {
+      event.preventDefault(); // Prevent form from reloading page
+      let name = document.getElementById('nameInput').value;
+      document.getElementById('output').innerText = "Hello, " + name + "!";
+    }
+  </script>
+</body>
+</html>
