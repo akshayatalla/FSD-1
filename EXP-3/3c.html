@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Types Example</title>
+    
+    <link rel="stylesheet" href="styles.css">
+
+
+    <style>
+        h1 {
+            color: navy; 
+            font-family: Arial, sans-serif;
+        }
+        .internal-style {
+            background-color: #eef;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Heading with Internal Style</h1>
+
+<p class="internal-style">This paragraph is styled by external CSS (color green) and internal CSS (background-color).</p>
+
+<p style="color: red; font-weight: bold;">
+    This paragraph uses inline CSS. (Selector: this paragraph element, Property: color, Value: red)
+</p>
+
+</body>
+</html>
