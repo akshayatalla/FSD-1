@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Functions</title>
+</head>
+<body>
+  <h2>JavaScript Functions</h2>
+  <input type="number" id="num" placeholder="Enter a number">
+  <button onclick="showResults()">Check</button>
+  <p id="factorial"></p>
+  <p id="fibonacci"></p>
+  <p id="prime"></p>
+  <p id="palindrome"></p>
+
+  <script>
+    // i. Factorial of a number
+    function factorial(n) {
+      if (n === 0 || n === 1) return 1;
+      return n * factorial(n - 1);
+    }
+
+    // ii. Fibonacci series up to that number
+    function fibonacciSeries(n) {
+      let fib = [0, 1];
+      for (let i = 2; i < n; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+      }
+      return fib.slice(0, n);
+    }
+
+    // iii. Prime numbers up to that number
+    function primeNumbers(n) {
+      let primes = [];
+      for (let i = 2; i <= n; i++) {
+        let isPrime = true;
+        for (let j = 2; j <= Math.sqrt(i); j++) {
+          if (i % j === 0) {
+            isPrime = false;
+            break;
+          }
+        }
+        if (isPrime) primes.push(i);
+      }
+      return primes;
+    }
+
+    // iv. Palindrome check
+    function isPalindrome(num) {
+      let str = num.toString();
+      let reversed = str.split('').reverse().join('');
+      return str === reversed;
+    }
+
+    // Function to display all results
+    function showResults() {
+      let n = parseInt(document.getElementById("num").value);
+      document.getElementById("factorial").innerHTML =
+        "Factorial of " + n + " = " + factorial(n);
+      document.getElementById("fibonacci").innerHTML =
+        "Fibonacci series up to " + n + " = " + fibonacciSeries(n).join(", ");
+      document.getElementById("prime").innerHTML =
+        "Prime numbers up to " + n + " = " + primeNumbers(n).join(", ");
+      document.getElementById("palindrome").innerHTML =
+        n + (isPalindrome(n) ? " is a Palindrome." : " is NOT a Palindrome.");
+    }
+  </script>
+</body>
+</html>

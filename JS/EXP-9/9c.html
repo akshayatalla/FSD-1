@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Registration Validation</title>
+</head>
+<body>
+  <h2>Registration Form</h2>
+
+  <form onsubmit="return validateForm()">
+    Name: <input type="text" id="name"><br><br>
+    Mobile: <input type="text" id="mobile"><br><br>
+    Email: <input type="text" id="email"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      let mobile = document.getElementById("mobile").value;
+      let email = document.getElementById("email").value;
+
+      // Name: start with alphabet, min 6 chars
+      let namePattern = /^[A-Za-z][A-Za-z0-9]{5,}$/;
+      if (!namePattern.test(name)) {
+        alert("Invalid Name! Must start with a letter and be at least 6 characters.");
+        return false;
+      }
+
+      // Mobile: exactly 10 digits
+      let mobilePattern = /^[0-9]{10}$/;
+      if (!mobilePattern.test(mobile)) {
+        alert("Invalid Mobile! Must be exactly 10 digits.");
+        return false;
+      }
+
+      // Email: simple format check
+      let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+      if (!emailPattern.test(email)) {
+        alert("Invalid Email! Format should be name@example.com");
+        return false;
+      }
+
+      alert("Registration Successful!");
+      return true;
+    }
+  </script>
+</body>
+</html>
