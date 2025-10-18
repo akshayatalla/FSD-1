@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>Loop Examples</title> 
+  <script> 
+    // For-In Loop (Object) 
+    function printForIn() { 
+      let car = { brand: "Toyota", model: "Corolla", year: 2022 }; 
+      let output = ""; 
+ 
+      for (let key in car) { 
+        output += key + ": " + car[key] + "<br>"; 
+      } 
+ 
+      document.getElementById("forInResult").innerHTML = output; 
+    } 
+ 
+    // For-Each Loop (Array) - without arrow function 
+    function printForEach() { 
+      let fruits = ["Apple", "Banana", "Cherry"]; 
+      let output = ""; 
+ 
+      fruits.forEach(function(fruit) { 
+        output += fruit + "<br>"; 
+      }); 
+ 
+      document.getElementById("forEachResult").innerHTML = output; 
+    } 
+ 
+    // For-Of Loop (Array) 
+    function printForOf() { 
+      let numbers = [10, 20, 30, 40, 50]; 
+      let output = ""; 
+ 
+      for (let num of numbers) { 
+        output += num + "<br>"; 
+      } 
+ 
+      document.getElementById("forOfResult").innerHTML = output; 
+    } 
+  </script> 
+</head> 
+<body> 
+  <h2>For-In Loop (Car Object)</h2> 
+  <button onclick="printForIn()">Run</button> 
+  <p id="forInResult"></p> 
+<h2>For-Each Loop (Fruits Array)</h2> 
+<button onclick="printForEach()">Run</button> 
+<p id="forEachResult"></p> 
+<h2>For-Of Loop (Numbers Array)</h2> 
+<button onclick="printForOf()">Run</button> 
+<p id="forOfResult"></p> 
+</body> 
+</html> 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Denomination Calculator</title>
+  <script>
+    function calculateDenominations() {
+      let amount = parseInt(document.getElementById("amountInput").value);
+      let denominations = [100, 50, 20, 10, 5, 2, 1];
+      let output = "";
+
+      for (let i = 0; i < denominations.length; i++) {
+        let count = Math.floor(amount / denominations[i]);
+        if (count > 0) {
+          output += count + " × " + denominations[i] + "<br>";
+          amount %= denominations[i]; // reduce the remaining amount
+        }
+      }
+
+      document.getElementById("result").innerHTML = output || "Enter a valid amount!";
+    }
+  </script>
+</head>
+<body>
+  <h2>Denomination Calculator</h2>
+  <input type="number" id="amountInput" placeholder="Enter amount">
+  <button onclick="calculateDenominations()">Calculate</button>
+  <p id="result"></p>
+</body>
+</html>
